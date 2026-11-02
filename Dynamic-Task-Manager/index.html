@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | Productivity Manager</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">✓</span>
+            <h2>TaskFlow</h2>
+        </div>
+
+        <p class="sidebar-heading">MENU</p>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#tasks-section" class="nav-link">
+                <span>☑</span> My Tasks
+            </a>
+
+            <a href="#add-task-section" class="nav-link">
+                <span>＋</span> Add New Task
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Stay focused.</p>
+            <small>Make today productive!</small>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content" id="dashboard">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div>
+                <p class="welcome-text">Welcome back!</p>
+                <h1>My Dashboard</h1>
+            </div>
+
+            <div class="date-display" id="current-date"></div>
+        </header>
+
+
+        <!-- Summary Cards -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon total-icon">▤</div>
+                <p>Total Tasks</p>
+                <h2 id="total-count">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon active-icon">◷</div>
+                <p>Active Tasks</p>
+                <h2 id="active-count">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon completed-icon">✓</div>
+                <p>Completed Tasks</p>
+                <h2 id="completed-count">0</h2>
+            </div>
+
+        </section>
+
+
+        <!-- Add Task Section -->
+        <section class="content-card" id="add-task-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Add New Task</h2>
+                    <p>Create a task and organize your day.</p>
+                </div>
+            </div>
+
+            <form id="task-form">
+
+                <div class="form-group">
+                    <label for="task-title">Task Title</label>
+                    <input
+                        type="text"
+                        id="task-title"
+                        placeholder="Enter your task..."
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="task-category">Category</label>
+
+                        <select id="task-category" required>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Study">Study</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-date">Due Date</label>
+
+                        <input
+                            type="date"
+                            id="task-date"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    + Add Task
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Tasks Section -->
+        <section class="content-card tasks-section" id="tasks-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Tasks</h2>
+                    <p>Manage and track your activities.</p>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="task-controls">
+
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search tasks..."
+                >
+
+                <select id="filter-category">
+                    <option value="All">All Categories</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Study">Study</option>
+                </select>
+
+            </div>
+
+
+            <!-- Status Filters -->
+            <div class="filter-tabs">
+
+                <button class="filter-btn active" data-filter="All">
+                    All
+                </button>
+
+                <button class="filter-btn" data-filter="Active">
+                    Active
+                </button>
+
+                <button class="filter-btn" data-filter="Completed">
+                    Completed
+                </button>
+
+            </div>
+
+
+            <!-- Task List -->
+            <div class="task-list" id="task-list">
+
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon">☑</div>
+                    <h3>No tasks yet</h3>
+                    <p>Add your first task to get started!</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© <span id="current-year"></span> TaskFlow. Built by Faizan Patel.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
